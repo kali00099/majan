@@ -1,0 +1,20 @@
+{
+  "name": "majan-discord-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "MAJAN — FiveM Roleplay community website with Discord OAuth2 login",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

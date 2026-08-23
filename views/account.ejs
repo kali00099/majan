@@ -1,0 +1,40 @@
+<% bodyClass = 'auth-page'; %>
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+<main class="account-main">
+  <div class="account-card reveal">
+    <div class="account-banner"></div>
+
+    <div class="account-avatar-wrap">
+      <img class="account-avatar" src="<%= avatarUrl() %>" alt="صورة <%= user.username %>">
+      <span class="status-dot" title="متصل"></span>
+    </div>
+
+    <h1><%= user.username %></h1>
+    <p class="account-tag">عضو في مجتمع MAJAN</p>
+
+    <div class="account-field">
+      <label>Discord ID</label>
+      <div class="id-row">
+        <code id="discordId"><%= user.id %></code>
+        <button class="copy-btn" id="copyId" type="button" data-target="discordId">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          نسخ
+        </button>
+      </div>
+    </div>
+
+    <div class="account-actions">
+      <a class="btn btn-gold btn-lg" href="<%= inviteUrl %>" target="_blank" rel="noopener noreferrer">دخول سيرفر Majan</a>
+      <a class="btn btn-outline btn-lg" href="/">العودة للرئيسية</a>
+    </div>
+
+    <a class="logout-link" href="/logout">
+      تسجيل الخروج
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+    </a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

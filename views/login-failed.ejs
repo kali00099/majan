@@ -1,0 +1,19 @@
+<% bodyClass = 'auth-page'; %>
+<%- include('partials/head', { title: 'Login Failed | MAJAN' }) %>
+<%- include('partials/navbar') %>
+
+<main class="account-main">
+  <div class="message-card reveal">
+    <div class="message-icon error-icon">
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <h1>Login Failed</h1>
+    <p>حدث خطأ غير متوقع أثناء تسجيل الدخول عبر Discord.<br>لا تقلق — المشكلة ليست من حسابك في معظم الأحيان.</p>
+    <div class="account-actions">
+      <a class="btn btn-gold btn-lg" href="/auth/discord">Try Again</a>
+      <a class="btn btn-outline btn-lg" href="/">العودة للرئيسية</a>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

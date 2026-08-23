@@ -1,0 +1,49 @@
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="MAJAN">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">MAJAN</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="القائمة الرئيسية">
+      <a href="/#home" class="active">الرئيسية</a>
+      <a href="/#features">المميزات</a>
+      <a href="/#about">عن السيرفر</a>
+      <a href="/#steps">كيف تنضم؟</a>
+      <a href="/#rules">القوانين</a>
+    </nav>
+
+    <div class="nav-actions">
+      <% if (user) { %>
+        <a class="user-chip" href="/account" title="حسابي">
+          <img src="<%= avatarUrl() %>" alt="" width="28" height="28" loading="lazy">
+          <span><%= user.username %></span>
+        </a>
+        <a class="btn btn-outline btn-sm" href="/logout" title="تسجيل الخروج">
+          خروج
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </a>
+      <% } else { %>
+        <a class="btn btn-outline btn-sm" href="/auth/discord">تسجيل الدخول</a>
+      <% } %>
+      <a class="btn btn-gold btn-sm" href="<%= inviteUrl %>" target="_blank" rel="noopener noreferrer">انضم إلينا</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#home">الرئيسية</a>
+    <a href="/#features">المميزات</a>
+    <a href="/#about">عن السيرفر</a>
+    <a href="/#steps">كيف تنضم؟</a>
+    <a href="/#rules">القوانين</a>
+    <% if (user) { %>
+      <a href="/account">حسابي (<%= user.username %>)</a>
+      <a href="/logout">تسجيل الخروج</a>
+    <% } else { %>
+      <a href="/auth/discord" class="mm-login">تسجيل الدخول بـ Discord</a>
+    <% } %>
+  </div>
+</header>
