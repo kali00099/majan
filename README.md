@@ -68,6 +68,25 @@ majan-site-discord/
 | `/login/failed` | صفحة "Login Failed" الجميلة مع زر Try Again |
 | `/api/me` | JSON لبيانات المستخدم الحالي |
 
+## النشر على Render (رابط دائم 24/7)
+
+1. ارفع المشروع إلى مستودع GitHub.
+2. سجّل دخول على <https://render.com> بحساب GitHub.
+3. **New → Web Service** → اختر المستودع.
+4. الإعدادات:
+   - Runtime: **Node**
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+5. من **Environment** أضف المتغيرات:
+   - `DISCORD_CLIENT_ID`
+   - `DISCORD_CLIENT_SECRET`
+   - `DISCORD_REDIRECT_URI=https://YOUR-APP.onrender.com/auth/discord/callback`
+   - `DISCORD_INVITE_URL`
+   - `SESSION_SECRET` (سلسلة عشوائية طويلة)
+   - `NODE_ENV=production`
+6. Deploy، ثم من Discord Developer Portal أضف Redirect:
+   `https://YOUR-APP.onrender.com/auth/discord/callback`
+
 ## الأمان
 
 - الـ Client Secret يعيش في `.env` على السيرفر فقط.
