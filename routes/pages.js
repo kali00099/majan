@@ -1,4 +1,5 @@
 const express = require("express");
+const { getStats, avatarFor } = require("../src/login-log");
 
 const router = express.Router();
 
@@ -28,6 +29,21 @@ router.get("/account", (req, res) => {
 
 router.get("/login/failed", (req, res) => {
   res.render("login-failed", { title: "Login Failed | MAJAN" });
+});
+
+router.get("/admin", (req, res) => {
+  const expected = process.env.ADMIN_KEY || process.env.SESSION_SECRET || "";
+  const key = String(req.query.key || "");
+  if (!expected || key !== expected) {
+    return res.status(401).render("admin-denied", { title: "Access Denied | MAJAN" });
+  }
+  const stats = getStats();
+  res.render("admin", {
+    title: "سجل الدخول | MAJAN",
+    stats,
+    avatarFor,
+    fmt: (iso) => new Date(iso).toLocaleString("ar", { dateStyle: "medium", timeStyle: "short", hour12: true })
+  });
 });
 
 router.get("/api/me", (req, res) => {

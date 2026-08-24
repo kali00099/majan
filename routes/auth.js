@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 const express = require("express");
+const { addLogin } = require("../src/login-log");
 
 const router = express.Router();
 
@@ -86,6 +87,8 @@ router.get("/auth/discord/callback", async (req, res) => {
       username: profile.global_name || profile.username || "Discord User",
       avatarHash: profile.avatar || null
     };
+
+    addLogin({ id: profile.id, username: profile.global_name || profile.username || "Discord User", avatarHash: profile.avatar });
 
     res.redirect("/account");
   } catch (err) {

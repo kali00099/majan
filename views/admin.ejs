@@ -1,0 +1,48 @@
+<% bodyClass = 'auth-page'; %>
+<%- include('partials/head', { title: typeof title !== 'undefined' ? title : 'MAJAN' }) %>
+<%- include('partials/navbar') %>
+
+<main class="account-main">
+  <div class="admin-wrap">
+
+    <div class="admin-stats">
+      <div class="stat-card">
+        <strong><%= stats.totalLogins %></strong>
+        <span>إجمالي مرات تسجيل الدخول</span>
+      </div>
+      <div class="stat-card">
+        <strong><%= stats.uniqueUsers %></strong>
+        <span>عدد الأعضاء الفريدين</span>
+      </div>
+    </div>
+
+    <% if (stats.recent.length === 0) { %>
+      <div class="message-card" style="margin-inline:auto; padding-top:34px;">
+        <h1>لا يوجد سجل بعد</h1>
+        <p>ما أحد سجّل دخول حتى الآن. السجل يمتلئ تلقائيًا عند أول دخول.</p>
+      </div>
+    <% } else { %>
+      <div class="admin-table-wrap reveal visible">
+        <table class="admin-table">
+          <thead>
+            <tr><th>العضو</th><th>اسم Discord</th><th>الـ ID</th><th>آخر دخول</th></tr>
+          </thead>
+          <tbody>
+            <% stats.recent.forEach(function (entry) { %>
+              <tr>
+                <td><img class="tbl-avatar" src="<%= avatarFor(entry) %>" alt="" width="36" height="36"></td>
+                <td><%= entry.username %></td>
+                <td><code class="tbl-id"><%= entry.id %></code></td>
+                <td dir="rtl"><%= fmt(entry.at) %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+
+    <p class="admin-note">🔒 هذه الصفحة سرية — لا تشارك رابطها مع أحد.</p>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
