@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   "use strict";
 
   // Navbar scroll state
@@ -94,13 +94,13 @@
       navigator.clipboard.writeText(target.textContent.trim()).then(function () {
         var original = copyBtn.innerHTML;
         copyBtn.classList.add("copied");
-        copyBtn.textContent = "تم النسخ ✓";
+        copyBtn.textContent = "طھظ… ط§ظ„ظ†ط³ط® âœ“";
         setTimeout(function () {
           copyBtn.classList.remove("copied");
           copyBtn.innerHTML = original;
         }, 1800);
       }).catch(function (err) {
-        console.error("[majan] copy failed:", err);
+        console.error("[terminal-city] copy failed:", err);
       });
     });
   }

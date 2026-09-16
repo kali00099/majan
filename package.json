@@ -2,7 +2,7 @@
   "name": "majan-discord-website",
   "version": "2.0.0",
   "private": true,
-  "description": "MAJAN — FiveM Roleplay community website with Discord OAuth2 login",
+  "description": "TERMINAL CITY — FiveM Roleplay community website with Discord OAuth2 login",
   "main": "src/server.js",
   "scripts": {
     "start": "node server.js",

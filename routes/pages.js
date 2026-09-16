@@ -19,27 +19,27 @@ router.use((req, res, next) => {
 });
 
 router.get("/", (req, res) => {
-  res.render("index", { title: "MAJAN | سيرفر ماجان — FiveM Roleplay" });
+  res.render("index", { title: "TERMINAL CITY | سيرفر FiveM Roleplay" });
 });
 
 router.get("/account", (req, res) => {
   if (!req.session.user) return res.redirect("/auth/discord");
-  res.render("account", { title: "حسابي | MAJAN" });
+  res.render("account", { title: "حسابي | TERMINAL CITY" });
 });
 
 router.get("/login/failed", (req, res) => {
-  res.render("login-failed", { title: "Login Failed | MAJAN" });
+  res.render("login-failed", { title: "Login Failed | TERMINAL CITY" });
 });
 
 router.get("/admin", (req, res) => {
   const expected = process.env.ADMIN_KEY || process.env.SESSION_SECRET || "";
   const key = String(req.query.key || "");
   if (!expected || key !== expected) {
-    return res.status(401).render("admin-denied", { title: "Access Denied | MAJAN" });
+    return res.status(401).render("admin-denied", { title: "Access Denied | TERMINAL CITY" });
   }
   const stats = getStats();
   res.render("admin", {
-    title: "سجل الدخول | MAJAN",
+    title: "سجل الدخول | TERMINAL CITY",
     stats,
     avatarFor,
     fmt: (iso) => new Date(iso).toLocaleString("ar", { dateStyle: "medium", timeStyle: "short", hour12: true })

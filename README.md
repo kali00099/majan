@@ -1,6 +1,6 @@
-# MAJAN — Community Website + Discord OAuth2 Login
+# TERMINAL CITY — Community Website + Discord OAuth2 Login
 
-موقع مجتمع **MAJAN** (FiveM Roleplay) مع تسجيل دخول حقيقي عبر **Discord OAuth2**.
+موقع مجتمع **TERMINAL CITY** (FiveM Roleplay) مع تسجيل دخول حقيقي عبر **Discord OAuth2**.
 
 ## التشغيل السريع
 
@@ -43,7 +43,7 @@ majan-site-discord/
 | `DISCORD_CLIENT_ID` | Client ID من Discord Developer Portal |
 | `DISCORD_CLIENT_SECRET` | Client Secret — لا تشاركه أبدًا ولا ترفعه إلى GitHub |
 | `DISCORD_REDIRECT_URI` | يجب أن يطابق تمامًا `http://localhost:3000/auth/discord/callback` |
-| `DISCORD_INVITE_URL` | رابط دعوة سيرفر Majan |
+| `DISCORD_INVITE_URL` | رابط دعوة سيرفر TERMINAL CITY |
 | `SESSION_SECRET` | سلسلة عشوائية طويلة لتوقيع كوكيز الجلسة |
 
 ## إعدادات Discord Developer Portal

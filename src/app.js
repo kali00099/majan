@@ -1,4 +1,4 @@
-require("dotenv").config();
+﻿require("dotenv").config();
 
 const path = require("path");
 const crypto = require("crypto");
@@ -17,7 +17,7 @@ app.set("trust proxy", 1);
 const REQUIRED_ENV = ["DISCORD_CLIENT_ID", "DISCORD_CLIENT_SECRET", "DISCORD_REDIRECT_URI", "DISCORD_INVITE_URL"];
 const missingEnv = REQUIRED_ENV.filter((key) => !process.env[key] || process.env[key].startsWith("PUT_"));
 if (missingEnv.length) {
-  console.warn(`[majan] تحذير: قيم ناقصة في .env → ${missingEnv.join(", ")} (تسجيل الدخول عبر Discord سيعرض صفحة Login Failed)`);
+  console.warn(`[majan] طھط­ط°ظٹط±: ظ‚ظٹظ… ظ†ط§ظ‚طµط© ظپظٹ .env â†’ ${missingEnv.join(", ")} (طھط³ط¬ظٹظ„ ط§ظ„ط¯ط®ظˆظ„ ط¹ط¨ط± Discord ط³ظٹط¹ط±ط¶ طµظپط­ط© Login Failed)`);
 }
 
 app.set("view engine", "ejs");
